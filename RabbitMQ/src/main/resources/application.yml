@@ -1,0 +1,29 @@
+# Cấu hình chung cho cả hai ứng dụng
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active: producer # Đặt profile mặc định là producer
+
+---
+
+# Cấu hình cho Producer
+spring:
+  profiles: producer
+server:
+  port: 8080
+  servlet:
+    context-path: /producer
+
+---
+
+# Cấu hình cho Consumer
+spring:
+  profiles: consumer
+server:
+  port: 8081
+  servlet:
+    context-path: /consumer

@@ -17,7 +17,7 @@ public class Producer {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
             // Thông điệp cần gửi
-            String message = "Hello, RabbitMQ!";
+            String message = "Hello, RabbitMQ 113!";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
         } catch (Exception e) {
